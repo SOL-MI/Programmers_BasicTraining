@@ -33,6 +33,7 @@ function solution(num_list) {
 }
 
 //참고할만한 풀이1 (메소드 체이닝, 전개연산자, map, join)
+//반환값을 모아 새로운 배열을 반환하는 map을 이용해 홀수, 짝수를 각각 찾아줌. join을 통해 문자로 반환된 값을 number를 통해 숫자로.
 function solution(num_list) {
     const odd = num_list.map(x => x%2 === 1 ? x : "").join("")
     const even = num_list.map(x => x%2 === 0 ? x : "").join("")
@@ -40,6 +41,7 @@ function solution(num_list) {
 }
 
 //참고할만한 풀이2 (filter, reduce)
+//홀수짝수를 참인 값만 뽑아 새로운 배열로 반환하는 filter를 이용해서 찾음. reduce를 이용해 문자열을 만들어줌.
 function solution(num_list) {
     var even = num_list.filter(n => n % 2 === 0).reduce((acc, cur) => acc+cur, '');
     var odd = num_list.filter(n => n % 2 === 1).reduce((acc, cur) => acc+cur, '');
