@@ -34,7 +34,7 @@ function solution(num_list) {
 
 //참고할만한 풀이 (메소드 체이닝, 전개연산자, map, join)
 function solution(num_list) {
-    const odd = [...(num_list+"")].map(x => Number(x)%2 === 1 ? x : "").join("")
-    const even = [...(num_list+"")].map(x => Number(x)%2 === 0 ? x : "").join("")
+    const odd = num_list.map(x => x%2 === 1 ? x : "").join("")
+    const even = num_list.map(x => x%2 === 0 ? x : "").join("")
     return Number(odd)+Number(even);
 }
