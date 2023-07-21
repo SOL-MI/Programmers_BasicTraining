@@ -32,9 +32,16 @@ function solution(num_list) {
     return parseInt(even) + parseInt(odd);
 }
 
-//참고할만한 풀이 (메소드 체이닝, 전개연산자, map, join)
+//참고할만한 풀이1 (메소드 체이닝, 전개연산자, map, join)
 function solution(num_list) {
     const odd = num_list.map(x => x%2 === 1 ? x : "").join("")
     const even = num_list.map(x => x%2 === 0 ? x : "").join("")
     return Number(odd)+Number(even);
+}
+
+//참고할만한 풀이2 (filter, reduce)
+function solution(num_list) {
+    var even = num_list.filter(n => n % 2 === 0).reduce((acc, cur) => acc+cur, '');
+    var odd = num_list.filter(n => n % 2 === 1).reduce((acc, cur) => acc+cur, '');
+    return Number(even) + Number(odd);
 }
